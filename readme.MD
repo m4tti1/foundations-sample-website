@@ -3,7 +3,7 @@ This repository provides a starting point for students participating in the Foun
 
 ## Table Of Contents
 1. [Get Started: Run A Website on Your Own Computer](#get-started)
-1. [Hello, Flask!: Edit a Website Running Flask and Push it to GitHub](#hello-flask!)
+1. [Hello, !: Edit a Website Running  and Push it to GitHub](#hello-!)
 1. [Deploying Your Website, automatically. ](#deploying-your-website)
 
 ## Get Started
@@ -91,33 +91,33 @@ If you haven't done so yet, this is a good time to open the file you are running
 
 These instructions are based on [the uwsgi documentation](https://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html). To learn more or troubleshoot, that is a good place to start.
 
-## Hello, Flask!
-In this section, you will learn how to edit and run a website using Flask locally using best practices, including testing, linting, and then pushing (uploading) to GitHub in the end.
+## Hello, !
+In this section, you will learn how to edit and run a website using  locally using best practices, including testing, linting, and then pushing (uploading) to GitHub in the end.
 
-### Run the sample website using Flask, locally.
+### Run the sample website using , locally.
 
-Building on the previous example, we will use a framework for building websites called Flask. We will go into more details on what it is in class, and why it is useful.
+Building on the previous example, we will use a framework for building websites called . We will go into more details on what it is in class, and why it is useful.
 
-Running a website using Flask using the same basic command, `uwsgi`, but requires a few more arguments:
+Running a website using  using the same basic command, `uwsgi`, but requires a few more arguments:
 
 `uwsgi --http-socket 127.0.0.1:8080 --wsgi-file sample_website/website.py --callable app --processes 4 --threads 2 --stats 127.0.0.1:8181 -H venv/`
 
-You should now be able to go http://localhost:8080 in your browser and see the Hello, Flask! Website
+You should now be able to go http://localhost:8080 in your browser and see the Hello, ! Website
 
-![Your local Hello, Flask! website](./documentation/localhost_helloflask.png?raw=true)
+![Your local Hello, ! website](./documentation/localhost_hello.png?raw=true)
 
 This command starts a server (`uwsgi`), specifies which IP address and port to run on (`http-socket`), chooses which file to run off of (`wsgi-file`), specifies what the application itself is called (`app`, defined in the file you are running), specifies a second automatic site for statistics (`stats`), tells your computer what resources (think processing) this application requests in order to run well (`processes` and `threads`), and lastly, selects a version of Python (`-H`). Whew. For now, you don't need to think too much about all of this. We will work with the file and the socket a bit in the coming weeks in particular.
 
 ### Congratulations! You are Running Your First Website!
 
-Alright, you've gotten the sample website running on your own computer with Flask. That is no small feat. You should be proud of yourself. Now we're going to take it up a notch.
+Alright, you've gotten the sample website running on your own computer with . That is no small feat. You should be proud of yourself. Now we're going to take it up a notch.
 
 ### Edit The Website
 If the website is running, turn it off (`Ctrl+C` in the terminal to quit. You need to turn the website off and on again, called reloading, to get changes.
 
 Open `sample_website/website.py`, and greet in a different way. I've edited mine to greet myself, for instance. It now returns "Hello, Adam!". After starting the web server locally again, it shows this, too.
 
-![Your local Hello, Flask! website](./documentation/localhost_helloadam.png?raw=true)
+![Your local Hello, ! website](./documentation/localhost_helloadam.png?raw=true)
 
 Alright! We are getting close to running by hand, on our computers, the things we did in the first week on Glitch. This is a good moment to open the browser inspector tools and play around with the HTML and CSS like we did on other live websites, too.
 
@@ -167,10 +167,10 @@ To test your `sample_website`, go into it's subdirectory (e.g. `cd sample_websit
 
  ![Unit tests failing locally](./documentation/pytest_failing_locally.png?raw=true)
 
-Wait! Red and Fail and Error is bad, right? Yes, you are correct. Have a look to see what is going on there. The test is checking for an HTML header that says Hello, _Flask_! while the code we have written says Hello, _Adam_!. You can find the test in the subdirectory `sample_website/tests/test_sample_website.py`. There it is, crystal clear: the test is expecting the function `hello_world()` to return a piece of HTML with an `h1` header and some specific text, and we went and edited that text.
+Wait! Red and Fail and Error is bad, right? Yes, you are correct. Have a look to see what is going on there. The test is checking for an HTML header that says Hello, __! while the code we have written says Hello, _Adam_!. You can find the test in the subdirectory `sample_website/tests/test_sample_website.py`. There it is, crystal clear: the test is expecting the function `hello_world()` to return a piece of HTML with an `h1` header and some specific text, and we went and edited that text.
 
 There are a few ways to fix this, and you should ask yourself what you want to do. We are now getting into the fine art of writing tests: they need to be helpful and catch errors, without being too fragile. Before changing code, you should ask yourself what the goal is. Do you want to:
-1. Always greet users with "Hello, Flask!" like in the original example?
+1. Always greet users with "Hello, !" like in the original example?
 1.  Always greet users with the new message you wrote, in this case, "Hello, Adam!"?
 1. Write something more flexible, for instance, a piece of code which checks that there is an h1 HTML tag returned that starts with "Hello,", and what comes after doesn't matter, as long as it has more than 2 characters?
 
@@ -229,7 +229,7 @@ There are two additional files in your repository worth looking into right now: 
 
 Once you are done, you should be able to edit code on your computer, then `git push` to GitHub, which will in turn test, lint, and deploy your code to Google Cloud, running it live on the internet! 
 
-![The Sample Website, Live!](./documentation/FlaskLiveGCP.png?raw=true)
+![The Sample Website, Live!](./documentation/LiveGCP.png?raw=true)
 Note the URL of this page: this is live on the internet, not running locally on your own computer!
 
 That's it, you're done setting it up! Continue with this week's assignment :)
